@@ -1,0 +1,14 @@
+[Unit]
+Description=fastapi application Service
+After=network.target
+
+[Service]
+User=Fastapismail
+Group=Fastapismail
+WorkingDirectory=/home/Fastapismail/app/src/app
+Environment="PATH=/home/Fastapismail/app/venv/bin"
+EnvironmentFile=/home/Fastapismail/.env
+ExecStart=/home/Fastapismail/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target

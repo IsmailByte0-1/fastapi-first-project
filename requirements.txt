@@ -17,6 +17,7 @@ fastapi-cli==0.0.24
 fastapi-cloud-cli==0.18.0
 fastar==0.11.0
 greenlet==3.5.1
+gunicorn==26.2.0
 h11==0.16.0
 httpcore==1.0.9
 httptools==0.8.0
@@ -58,5 +59,6 @@ typing_extensions==4.15.0
 tzdata==2026.2
 urllib3==2.7.0
 uvicorn==0.48.0
+uvloop==0.22.1
 watchfiles==1.2.0
 websockets==16.0
