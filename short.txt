@@ -3,6 +3,5 @@ python -m uvicorn app.mine:app --reload
 deactivate
 postgress password :Isamilali123                           (@#)
 
-
-
 cloudflared tunnel --url http://localhost:8000
+cd /home/ismail/py/FastAPI/fastapi_project

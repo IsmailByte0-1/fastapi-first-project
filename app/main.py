@@ -5,7 +5,7 @@ from . import models
 from .database import engine 
 from .routers import post, auth, users, Vote
 
-# models.Base.metadata.create_all(bind=engine)
+#models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI() 
 
@@ -25,4 +25,4 @@ app.include_router(Vote.router)
 
 @app.get('/')
 async def root():
-    return {"message": "Hello my World"}
+    return {"message": "hello world"}

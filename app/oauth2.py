@@ -12,8 +12,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 SECRET_KEY = settings.secret_key
 ALGORITHM = settings.algorithm
-ACCESS_TOKEN_EXPIRE_MINUTES = settings.acess_token_expire_minutes
-
+ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
 
 def create_access_token(data: dict):
 
@@ -70,5 +69,5 @@ def get_current_user(
         token,
         credentials_exception
     )
-    user = db.query(models.Users).filter(models.Users.id == token.id).first()
+    user = db.query(models.User).filter(models.User.id == token.id).first()
     return user

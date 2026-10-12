@@ -15,7 +15,7 @@ def create_users(user : schemas.UserCreate ,db : Session = Depends(get_db)):
     hashed_password = utils.hash(user.password)
     user.password = hashed_password
 
-    new_user = models.Users(**user.model_dump()) # model_dump() to make it as dictonary
+    new_user = models.User(**user.model_dump()) # model_dump() to make it as dictonary
                                                     # i should serach about it more
 
     db.add(new_user)
@@ -25,7 +25,7 @@ def create_users(user : schemas.UserCreate ,db : Session = Depends(get_db)):
 
 @router.get('/{id}', response_model=schemas.UserOut)
 def get_user(id: int, db : Session = Depends(get_db)):
-    user = db.query(models.Users).filter(models.Users.id == id ).first()
+    user = db.query(models.User).filter(models.User.id == id ).first()
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail= f"user with this {id} not existed")

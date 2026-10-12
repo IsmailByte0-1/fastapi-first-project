@@ -15,9 +15,7 @@ def login(
     db: Session = Depends(database.get_db)
 ):
 
-    user = db.query(models.Users).filter(
-        models.Users.email == user_credentials.username
-    ).first()
+    user = db.query(models.User).filter(models.User.email == user_credentials.username).first()
 
     if not user:
         raise HTTPException(
